@@ -32,22 +32,24 @@ Usage
 The following example assumes that the current directory contains an
 FMU whose file name is `bouncingBall.fmu`.
 
-    import pyfmq
-  
-    pyfmq.setKeys("<your public key>", "<your private key>")  
-  
-    # This registers the FMU file with the FMQ service
-    fmu = pyfmq.register("./bouncingBall.fmu")
-    
-    results = []
-    for i in range(1,10):
-      promise = pyfmq.sim(fmu, sim_args={"final_time": 10.0},
-                          params={"e": 0.5+0.02*i},
-                          signals=["h", "v"])
-      results.append(promise)
-  
-    for r in results:
-      print r.get()
+```python
+import pyfmq
+
+pyfmq.setKeys("<your public key>", "<your private key>")  
+
+# This registers the FMU file with the FMQ service
+fmu = pyfmq.register("./bouncingBall.fmu")
+
+results = []
+for i in range(1,10):
+  promise = pyfmq.sim(fmu, sim_args={"final_time": 10.0},
+                      params={"e": 0.5+0.02*i},
+                      signals=["h", "v"])
+  results.append(promise)
+
+for r in results:
+  print r.get()
+```
 
 The `params` keyword argument to the `sim` method includes a
 dictionary of parameter names (as keys) which map to parameter values.
