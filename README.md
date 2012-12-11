@@ -17,6 +17,15 @@ to be passed in and returns a "promise" for the simulation results
 that can retrieve simulation results and convert them into normal
 Python data.
 
+Installation
+------------
+
+The really easy way to install this package (for now) is to just install
+the latest version on GitHub.  You can do this directly with `pip` using
+the following command:
+
+    % pip install git+git://github.com/xogeny/pyfmq.git
+
 Usage
 -----
 
