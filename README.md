@@ -64,7 +64,7 @@ future release.
 Promises
 --------
 
-The careful reader will not that each simulation **does not** result a
+The careful reader will note that each simulation **does not** return a
 simulation result.  Instead, it returns a "promise" for a simulation
 result.  The results of the simulation can be extracted using the
 `get` method on the promise object.  **But note**, this will cause the
@@ -77,4 +77,4 @@ performance.
 
 A good "promise" implementation (and this isn't one :-), would allow
 you to compose other computations together into other promise objects
-(ala Akka in Scala).  I haven't gone to that extent with this library.
+(ala Akka in Scala).  I haven't gone to that extent with this library (yet).
