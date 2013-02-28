@@ -35,7 +35,7 @@ FMU whose file name is `bouncingBall.fmu`.
 ```python
 import pyfmq
 
-pyfmq.setKeys("<your public key>", "<your private key>")  
+pyfmq.setKeys("<your user id>", "<your password>")  
 
 # This registers the FMU file with the FMQ service
 fmu = pyfmq.register("./bouncingBall.fmu")
