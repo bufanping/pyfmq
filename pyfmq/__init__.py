@@ -11,7 +11,7 @@ KEYS = None
 class ResultAccessError(Exception):
     def __init__(self, url, e):
         self.url = url
-        self.e
+        self.e = e
     def __str__(self):
         return repr(str(self.url)+":"+str(self.e))
 
@@ -37,8 +37,8 @@ class Future:
         req = urllib2.Request(url)
         try:
             resp = urllib2.urlopen(req)
-        except urllib2.HTTPError:
-            raise ResultAccessError(url)
+        except urllib2.HTTPError as e:
+            raise ResultAccessError(url, e)
         return json.loads(resp.read())
     def __str__(self):
         return "A future for "+str(self.key)
